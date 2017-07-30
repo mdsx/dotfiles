@@ -1,0 +1,70 @@
+[options]
+allow_bold = true
+#audible_bell = false
+clickable_url = true
+#dynamic_title = true
+font = Source Code Pro 11
+#fullscreen = true
+geometry = 750x500
+icon_name = terminal
+mouse_autohide = false
+#scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 10000
+search_wrap = true
+#urgent_on_bell = true
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+#browser = xdg-open
+
+# "system", "on" or "off"
+cursor_blink = system
+
+# "block", "underline" or "ibeam"
+cursor_shape = ibeam
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+# set size hints for the window
+#size_hints = false
+
+[colors]
+foreground = #1d1f21
+foreground_bold = #1d1f21
+background = #eceff0
+
+# colors from color0 to color254 can be set
+color0 = #3f3f3f
+color1 = #ff4845
+color2 = #288ad6
+color3 = #47aa12
+color4 = #8d938d
+color5 = #6b7db4
+color6 = #babaa9
+color7 = #445e67
+
+color8 = #303030
+color9 = #D4665D
+color10 = #4c83ad
+color11 = #61854e
+color12 = #6e776e
+color13 = #5f6a8b
+color14 = #a4a493
+color15 = #4b575a
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s
