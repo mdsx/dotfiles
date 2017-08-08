@@ -70,7 +70,7 @@ set relativenumber
 syntax enable
 set background=dark
 colo cupertino-light
-" source .vim/colors/cupertino-light.vim
+source .vim/colors/cupertino-light.vim
 " filetype plugin on
 
 " Add spaces after comment delimiters by default
