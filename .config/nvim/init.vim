@@ -27,8 +27,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'python-mode/python-mode'
 Plug 'plasticboy/vim-markdown'
-" Plug 'suan/vim-instant-markdown'
-" Plug 'rakr/vim-two-firewatch'
 
 call plug#end()
 
