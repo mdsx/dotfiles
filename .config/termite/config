@@ -13,6 +13,7 @@ scroll_on_keystroke = true
 scrollback_lines = 10000
 search_wrap = true
 #urgent_on_bell = true
+padding = 18
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
 #browser = xdg-open

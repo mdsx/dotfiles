@@ -1,0 +1,44 @@
+#! /bin/sh
+
+gap=10
+XFPANEL_HEIGHT=27
+POLYBAR_HEIGHT=32
+export gap
+export XFPANEL_HEIGHT
+export POLYBAR_HEIGHT
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+# Autostart
+sxhkd &
+# source /home/ms/.config/bspwm/autostart
+compton -b &
+nitrogen --restore &
+xfce4-power-manager &
+xfsettingsd
+redshift &
+xfce4-panel &
+/home/ms/code/shell_scripts/launch_poly.sh
+
+# Gaps
+bspc config window_gap      $gap;
+bspc config top_padding     $(($XFPANEL_HEIGHT + $gap))
+bspc config left_padding    $gap
+bspc config right_padding   $gap
+bspc config bottom_padding  $(($POLYBAR_HEIGHT + 2 * $gap))
+
+# Misc
+bspc config split_ratio          0.52
+bspc config focus_follows_pointer true
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# Borders
+bspc config border_width            2
+bspc config focused_border_color    "#4c83ad"
+bspc config normal_border_color     "#eceff0"
+bspc config presel_feedback_color   "#4c83ad"
+
+# Rules
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Google Chrome desktop='^2'

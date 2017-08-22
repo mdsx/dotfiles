@@ -33,11 +33,11 @@ export TERM=xterm-256color
 # Aliases
 alias vi="nvim"
 alias srcd="source deactivate"
-alias py27="source activate py27"
-alias py36="source activate py36"
+alias py27="source /home/ms/.conda/envs/py27/bin/activate py27"
+alias py36="source /home/ms/.conda/envs/py36/bin/activate py36"
 alias py="python"
 alias colors="~/code/color-scripts/color-scripts/panes"
-alias these-bxxxxxx-want="~/code/color-scripts/color-scripts/nikes"
+alias pac="pacaur"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

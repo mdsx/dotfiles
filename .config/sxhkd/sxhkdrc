@@ -1,0 +1,82 @@
+# ----------------------
+# wm independent hotkeys
+# ----------------------
+
+# terminal emulator
+super + Return
+	termite
+
+# rofi drun
+super + p
+	rofi -show drun
+
+# rofi switch window
+alt + Tab
+	rofi -show window
+
+# xfce appmenu
+super + @space
+	xfce4-popup-whiskermenu
+
+# thunar
+super + f
+	thunar
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+
+# -------------
+# bspwm hotkeys
+# -------------
+
+# reload bspwmrc
+super + b
+	/home/ms/.config/bspwm/bspwmrc
+
+# close window
+super + q
+	bspc node -c
+
+# quit bspwm normally
+super + alt + Escape
+	bspc quit
+
+
+# -------------
+# function keys
+# -------------
+
+# rotate windows
+F1
+	bspc node @/ -R 90
+
+# circulate windows
+F2
+	bspc node @/ -C forward
+
+# flip windows horizontal
+F3
+	bspc node @/ -F horizontal
+
+# flip windows vertical
+F4
+	bspc node @/ -F vertical
+
+# set the window state
+{F9,F10,F11,F12}
+	bspc node -t {floating,tiled,pseudo_tiled,fullscreen}
+
+
+# ----------
+# focus/swap
+# ----------
+
+# focus the next/previous node
+alt + {Up,Down}
+	bspc node -f {prev,next}.local.!above
+
+# focus the next/previous desktop
+super + alt + {Left,Right}
+	bspc desktop -f {prev,next}
