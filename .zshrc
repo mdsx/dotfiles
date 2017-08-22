@@ -38,6 +38,7 @@ alias py36="source /home/ms/.conda/envs/py36/bin/activate py36"
 alias py="python"
 alias colors="~/code/color-scripts/color-scripts/panes"
 alias pac="pacaur"
+alias poly="/home/ms/code/shell_scripts/launch_poly.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

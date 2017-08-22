@@ -1,11 +1,11 @@
 [colors]
-background = #f1f4f7
+background = #1d1f21
 background-alt = #444
-foreground = #1d1f21
-foreground-alt = #555
+foreground = #f1f4f7
+foreground-alt = #8d938d
 primary = #ffb52a
 secondary = #D4665D
-alert = #bd2c40
+alert = #ff4845
 highlight = #288ad6
 
 [bar/top]
@@ -15,7 +15,7 @@ offset-x = 95%
 offset-y = 0
 fixed-center = true
 
-background = #222222
+background = #303030
 foreground = #eceff0
 
 line-size = 3
@@ -65,7 +65,7 @@ offset-y = 10
 fixed-center = true
 bottom = true
 
-background = #222222e6
+background = #303030
 foreground = #eceff0
 
 line-size = 3
@@ -74,19 +74,18 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 2
 module-margin-right = 2
 
 font-0 = SFNS Display:size=11:antialias=true:hinting=none;2
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
 font-2 = siji:pixelsize=10;1
 font-3 = SauceCodePro Nerd Font:size=10;0
 
 modules-left = bspwm
-modules-right = powermenu
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
@@ -124,19 +123,24 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
-label-focused-background = ${colors.highlight}
-label-focused-foreground = ${colors.background}
-label-focused-padding = 3
+;label-focused = %index%
+label-focused = "●"
+;label-focused-background = ${colors.highlight}
+label-focused-foreground = ${colors.foreground}
+label-focused-padding = 2
 
-label-occupied = %index%
-label-occupied-padding = 3
+;label-occupied = %index%
+label-occupied = "○"
+label-occupied-foreground = ${colors.foreground}
+label-occupied-padding = 2
 
-label-urgent = %index%!
+;label-urgent = %index%!
+label-urgent = "●"
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 3
+label-urgent-padding = 2
 
-label-empty = %index%
+;label-empty = %index%
+label-empty = "•"
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 3
 
