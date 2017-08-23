@@ -8,12 +8,18 @@ secondary = #D4665D
 alert = #ff4845
 highlight = #288ad6
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; COLORS ARE ARGB NOT RGBA! ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 [bar/top]
-width = 5%
+width = 49%
 height = 27
-offset-x = 95%
+offset-x = 51%
 offset-y = 0
 fixed-center = true
+override-redirect = true
+wm-restack = bspwm
 
 background = #303030
 foreground = #eceff0
@@ -64,28 +70,33 @@ offset-x = 17%
 offset-y = 10
 fixed-center = true
 bottom = true
+override-redirect = true
+wm-restack = bspwm
+;spacing = 5
 
-background = #303030
+background = #00303030
 foreground = #eceff0
 
 line-size = 3
 line-color = #f00
 
-border-size = 0
+border-size = 5
 border-color = #00000000
 
 padding-left = 2
 padding-right = 2
 
-module-margin-left = 2
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = SFNS Display:size=11:antialias=true:hinting=none;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
 font-2 = siji:pixelsize=10;1
 font-3 = SauceCodePro Nerd Font:size=10;0
 
-modules-left = bspwm
+;modules-left = bspwm
+;modules-right = spotipy previous playpause next
+modules-center = bspwm spacer spotipy previous playpause next
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
@@ -123,6 +134,9 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
+format-background = #303030
+format-padding = 2
+
 ;label-focused = %index%
 label-focused = "●"
 ;label-focused-background = ${colors.highlight}
@@ -142,7 +156,7 @@ label-urgent-padding = 2
 ;label-empty = %index%
 label-empty = "•"
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 3
+label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -373,10 +387,10 @@ menu-0-1-exec = menu-open-2
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
 menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-1-exec = reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
@@ -390,6 +404,48 @@ format-foreground = ${colors.background}
 label = "%output:0:30%"
 exec = /usr/local/bin/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/previous]
+type = custom/script
+format-background = #303030
+format-padding = 2
+format-text = <label>
+label = 
+exec = echo label
+click-left = exec playerctl previous
+format-foreground = #eeeeee
+
+[module/next]
+format-background = #303030
+format-padding = 2
+type = custom/script
+format-text = <label>
+label = 
+exec = echo label
+click-left = exec playerctl next
+format-foreground = #eeeeee
+
+[module/spotipy]
+format-background = #303030
+format-padding = 2
+type = custom/script
+exec =  python3 ~/code/py_scripts/spoti.py
+exec-if = pgrep spotify > /dev/null
+interval = 0.01
+click-left = playerctl -p spotify play-pause
+
+[module/playpause]
+format-background = #303030
+format-padding = 2
+type = custom/script
+exec = python3 ~/code/py_scripts/playpause.py
+interval = 0.01
+click-left = playerctl -p spotify play-pause
+
+[module/spacer]
+format-background = #00303030
+type = custom/script
+exec = echo "  "
 
 [settings]
 screenchange-reload = true
