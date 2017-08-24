@@ -13,20 +13,20 @@ print_info() {
 
     info "OS" distro
     # info "Model" model
-    prin "$(color 10)Model: $(color 0)ThinkPad X1 Carbon 5th"
+    prin "$(color 10)Model: $(color 8)ThinkPad X1 Carbon 5th"
     info "Kernel" kernel
     info "Uptime" uptime
     info "Packages" packages
     # info "Shell" shell
-    prin "$(color 10)Shell: $(color 0)zsh"
+    prin "$(color 10)Shell: $(color 8)zsh"
     info "Resolution" resolution
     info "DE" de
     info "WM" wm
     info "WM Theme" wm_theme
     # info "Theme" theme
-    prin "$(color 10)Theme: $(color 0)Arc"
+    prin "$(color 10)Theme: $(color 8)Arc"
     # info "Icons" icons
-    prin "$(color 10)Icons: $(color 0)La Capitaine"
+    prin "$(color 10)Icons: $(color 8)La Capitaine"
     info "Terminal" term
     info "Terminal Font" term_font
     info "CPU" cpu
