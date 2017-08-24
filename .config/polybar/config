@@ -2,7 +2,7 @@
 background = #1d1f21
 background-alt = #444
 foreground = #f1f4f7
-foreground-alt = #8d938d
+foreground-alt = #a2a4a2
 primary = #ffb52a
 secondary = #D4665D
 alert = #ff4845
@@ -39,8 +39,9 @@ module-margin-right = 2
 font-0 = SFNS Display:size=11:antialias=true:hinting=none;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
-font-3 = SauceCodePro Nerd Font:size=10;0
-;font-3 = FontAwesome:size=10;0
+font-3 = SauceCodePro Nerd Font:size=11;1
+font-4 = feather:size=11;1
+;font-5 = FontAwesome:size=10;0
 
 ;modules-left = bspwm
 ;modules-center = date
@@ -92,11 +93,12 @@ module-margin-right = 0
 font-0 = SFNS Display:size=11:antialias=true:hinting=none;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
 font-2 = siji:pixelsize=10;1
-font-3 = SauceCodePro Nerd Font:size=10;0
+font-3 = SauceCodePro Nerd Font:size=11;2
+font-4 = feather:size=11;2
 
 ;modules-left = bspwm
 ;modules-right = spotipy previous playpause next
-modules-center = bspwm spacer spotipy previous playpause next
+modules-center = pkg bspwm cpu memory spacer spotipy previous playpause next
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
@@ -136,6 +138,7 @@ type = internal/bspwm
 
 format-background = #303030
 format-padding = 2
+format-margin = 1
 
 ;label-focused = %index%
 label-focused = "●"
@@ -230,16 +233,22 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-offset-y = 10
+format-background = #303030
+format-padding = 2
+format-margin = 1
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
+format-background = #303030
+format-padding = 2
+format-margin = 1
 label = %percentage_used%%
 
 [module/wlan]
@@ -247,7 +256,7 @@ type = internal/network
 interface = wlp4s0
 interval = 3.0
 
-format-connected =  <label-connected>
+format-connected =  <label-connected>
 label-connected = %essid%
 
 format-disconnected =
@@ -372,8 +381,8 @@ type = custom/menu
 format-spacing = 1
 
 ;label-open = 
-label-open = " "
-label-open-foreground = ${colors.secondary}
+label-open = "  "
+label-open-foreground = ${colors.alert}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
@@ -383,6 +392,8 @@ menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
+menu-0-2 = 
+menu-0-2-exec = i3lock
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
@@ -399,10 +410,12 @@ type = custom/script
 interval = 1200
 format = <label>
 format-padding = 2
+format-margin = 1
 format-background = #D4665D
 format-foreground = ${colors.background}
 label = "%output:0:30%"
-exec = /usr/local/bin/pkg.sh
+;exec = /usr/local/bin/pkg.sh
+exec = ~/.config/polybar/scripts/pkg.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 [module/previous]
@@ -410,7 +423,7 @@ type = custom/script
 format-background = #303030
 format-padding = 2
 format-text = <label>
-label = 
+label = 
 exec = echo label
 click-left = exec playerctl previous
 format-foreground = #eeeeee
@@ -420,7 +433,7 @@ format-background = #303030
 format-padding = 2
 type = custom/script
 format-text = <label>
-label = 
+label = 
 exec = echo label
 click-left = exec playerctl next
 format-foreground = #eeeeee
@@ -429,7 +442,8 @@ format-foreground = #eeeeee
 format-background = #303030
 format-padding = 2
 type = custom/script
-exec =  python3 ~/code/py_scripts/spoti.py
+;exec =  python3 ~/code/py_scripts/spoti.py
+exec = python3 ~/.config/polybar/scripts/spoti.py
 exec-if = pgrep spotify > /dev/null
 interval = 0.01
 click-left = playerctl -p spotify play-pause
@@ -438,14 +452,15 @@ click-left = playerctl -p spotify play-pause
 format-background = #303030
 format-padding = 2
 type = custom/script
-exec = python3 ~/code/py_scripts/playpause.py
+;exec = python3 ~/code/py_scripts/playpause.py
+exec = python3 ~/.config/polybar/scripts/playpause.py
 interval = 0.01
 click-left = playerctl -p spotify play-pause
 
 [module/spacer]
 format-background = #00303030
 type = custom/script
-exec = echo "  "
+exec = echo " "
 
 [settings]
 screenchange-reload = true
