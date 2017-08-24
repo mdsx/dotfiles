@@ -15,6 +15,7 @@ sxhkd &
 compton -b &
 nitrogen --restore &
 xfce4-power-manager &
+tlp start
 xfsettingsd
 redshift &
 xfce4-panel &

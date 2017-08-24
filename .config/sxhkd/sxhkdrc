@@ -8,11 +8,11 @@ super + Return
 
 # rofi drun
 super + p
-	rofi -show drun
+	rofi -show drun -font "Source Code Pro 12" -scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
 
 # rofi switch window
 alt + Tab
-	rofi -show window
+	rofi -show window -font "Source Code Pro 12" -scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
 
 # xfce appmenu
 super + @space
@@ -25,6 +25,10 @@ super + f
 # i3lock
 super + l
 	i3lock
+
+# scrot
+super + t
+	scrot 'bspwm1_%d-%m-%Y.png'
 
 # make sxhkd reload its configuration files:
 super + Escape
