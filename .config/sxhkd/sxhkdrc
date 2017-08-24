@@ -24,7 +24,7 @@ super + f
 
 # fancy lock
 super + l
-	i3lock-fancy -g -f SFNS-Display
+	i3lock-fancy -p -g -t -f SFNS-Display
 
 # Screenshot via Print Screen
 Print

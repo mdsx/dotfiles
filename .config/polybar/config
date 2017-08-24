@@ -393,7 +393,7 @@ menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
 menu-0-2 = 
-menu-0-2-exec = i3lock-fancy -g -f SFNS-Display
+menu-0-2-exec = i3lock-fancy -p -g -t -f SFNS-Display
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
