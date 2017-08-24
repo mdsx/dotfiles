@@ -22,17 +22,48 @@ super + @space
 super + f
 	thunar
 
-# i3lock
+# fancy lock
 super + l
-	i3lock
+	i3lock-fancy -g -f SFNS-Display
 
-# scrot
-super + t
-	scrot 'bspwm1_%m-%d-%Y.png'
+# Screenshot via Print Screen
+Print
+	scrot '%m-%d-%Y.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+
+# ----------
+# voume keys
+# ----------
+
+XF86AudioMute
+	amixer set Master toggle ; pkill not-stat ; not-stat Mt
+
+XF86AudioLowerVolume
+	amixer set Master 2%- ; pkill not-stat ; not-stat Vl
+
+XF86AudioRaiseVolume
+	amixer set Master 2%+ ; pkill not-stat ; not-stat Vl
+
+super + XF86AudioRaiseVolume
+	amixer set Master 1%+ ; pkill not-stat ; not-stat Vl
+
+super + XF86AudioLowerVolume
+	amixer set Master 1%- ; pkill not-stat ; not-stat Vl
+
+
+# ---------------
+# brightness keys
+# ---------------
+
+XF86MonBrightnessDown
+	xbacklight -dec 5
+
+XF86MonBrightnessUp
+	xbacklight -inc 5
 
 
 # -------------
