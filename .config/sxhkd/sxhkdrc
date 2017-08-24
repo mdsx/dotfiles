@@ -28,7 +28,7 @@ super + l
 
 # scrot
 super + t
-	scrot 'bspwm1_%d-%m-%Y.png'
+	scrot 'bspwm1_%m-%d-%Y.png'
 
 # make sxhkd reload its configuration files:
 super + Escape
