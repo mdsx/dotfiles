@@ -103,6 +103,40 @@ modules-center = pkg bspwm cpu memory spacer spotipy previous playpause next
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
 
+[bar/systray]
+width = 20%
+height = 32
+offset-x = -4
+offset-y = 10
+bottom = true
+override-redirect = true
+
+background = #00303030
+foreground = #434343
+
+border-size = 5
+border-color = #00000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = SFNS Display:size=11:antialias=true:hinting=none;2
+font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
+font-2 = siji:pixelsize=10;1
+font-3 = SauceCodePro Nerd Font:size=11;3
+font-4 = steadysetfeather:size=11;2
+
+modules-left = battery wlan volume
+
+;tray-position = left
+;tray-maxsize = 16
+;tray-padding = 8
+;tray-transparent = false
+;tray-background = #eceff0
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -256,7 +290,9 @@ type = internal/network
 interface = wlp4s0
 interval = 3.0
 
-format-connected =  <label-connected>
+format-connected-background = ${colors.foreground}
+format-connected-padding = 2
+format-connected =  <label-connected>
 label-connected = %essid%
 
 format-disconnected =
@@ -308,24 +344,28 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
+format-volume-background = ${colors.foreground}
+format-volume-padding = 2
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = 
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = " "
+format-muted-background = ${colors.foreground}
 format-muted-foreground = ${colors.foreground-alt}
+format-muted-padding = 2
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-0 = #47aa12
+bar-volume-foreground-1 = #47aa12
+bar-volume-foreground-2 = #47aa12
+bar-volume-foreground-3 = #47aa12
+bar-volume-foreground-4 = #47aa12
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = "●"
 bar-volume-indicator-font = 2
 bar-volume-fill = ─
 bar-volume-fill-font = 2
@@ -338,11 +378,21 @@ type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 98
+format-padding = 2
+format-margin-left = 2
+format-background = ${colors.foreground}
 
-format-charging =  <animation-charging> <label-charging>
+format-charging-background = ${colors.foreground}
+format-charging-padding = 2
+format-charging =   <animation-charging> <label-charging>
+
+format-discharging-background = ${colors.foreground}
+format-discharging-padding = 2
 format-discharging =  <label-discharging>
 
 format-full-prefix = " "
+format-full-prefix-padding = 2
+format-full-prefix-background = ${colors.foreground}
 format-full-prefix-foreground = ${colors.foreground-alt}
 
 ramp-capacity-0 = 
@@ -353,6 +403,7 @@ ramp-capacity-foreground = ${colors.foreground-alt}
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
+animation-charging-3 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -393,7 +444,7 @@ menu-0-0-exec = menu-open-1
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
 menu-0-2 = 
-menu-0-2-exec = i3lock-fancy -p -g -t '' -f SFNS-Display
+menu-0-2-exec = i3lock-fancy -pgt '' -f SFNS-Display && systemctl suspend
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
@@ -425,7 +476,7 @@ format-padding = 2
 format-text = <label>
 label = 
 exec = echo label
-click-left = exec playerctl previous
+click-left = ! (exec playerctl previous) && mpc prev
 format-foreground = #eeeeee
 
 [module/next]
@@ -435,16 +486,15 @@ type = custom/script
 format-text = <label>
 label = 
 exec = echo label
-click-left = exec playerctl next
+click-left = ! (exec playerctl next) && mpc next
 format-foreground = #eeeeee
 
 [module/spotipy]
 format-background = #303030
 format-padding = 2
 type = custom/script
-;exec =  python3 ~/code/py_scripts/spoti.py
 exec = python3 ~/.config/polybar/scripts/spoti.py
-exec-if = pgrep spotify > /dev/null
+;exec-if = pgrep spotify > /dev/null
 interval = 0.01
 click-left = playerctl -p spotify play-pause
 
@@ -455,12 +505,24 @@ type = custom/script
 ;exec = python3 ~/code/py_scripts/playpause.py
 exec = python3 ~/.config/polybar/scripts/playpause.py
 interval = 0.01
-click-left = playerctl -p spotify play-pause
+click-left = ! (playerctl -p spotify play-pause) && mpc toggle
+
+[module/redshift]
+format-background = ${colors.foreground}
+format-padding = 2
+type = custom/script
+format-text = <label>
+label = 💡
+exec = echo label
 
 [module/spacer]
-format-background = #00303030
+click-left = exec playerctl next format-background = #00303030
 type = custom/script
 exec = echo " "
+
+[module/placeholder]
+type = custom/script
+width = 1
 
 [settings]
 screenchange-reload = true

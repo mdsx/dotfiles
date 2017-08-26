@@ -24,7 +24,11 @@ super + f
 
 # fancy lock
 super + l
-	i3lock-fancy -p -g -t '' -f SFNS-Display
+	i3lock-fancy -pgt '' -f SFNS-Display && systemctl suspend
+
+# hiddle dee hiddle dum
+super + h
+	~/Downloads/hideIt.sh/hideIt.sh -H -N polybar-systray_eDP1 -s 7
 
 # Screenshot via Print Screen
 Print
@@ -88,19 +92,19 @@ super + alt + Escape
 # -------------
 
 # rotate windows
-F1
+alt + F1
 	bspc node @/ -R 90
 
 # circulate windows
-F2
+alt + F2
 	bspc node @/ -C forward
 
 # flip windows horizontal
-F3
+alt + F3
 	bspc node @/ -F horizontal
 
 # flip windows vertical
-F4
+alt + F4
 	bspc node @/ -F vertical
 
 # set the window state
