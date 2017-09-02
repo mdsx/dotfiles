@@ -7,7 +7,7 @@ cmd = cmd.split('\n')
 cmd = cmd[0]
 
 if cmd == 'Not available':
-    cmd = os.popen('mpc status').read()
+    cmd = os.popen('mpc status 2>/dev/null').read()
     cmd = cmd.split('\n')
     cmd = cmd[0]
     print(cmd)

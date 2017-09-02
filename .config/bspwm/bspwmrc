@@ -14,12 +14,12 @@ sxhkd &
 # source /home/ms/.config/bspwm/autostart
 compton -b &
 nitrogen --restore &
-xfce4-power-manager &
-tlp start
-xfsettingsd
-redshift &
-xfce4-panel -d &
 /home/ms/code/shell_scripts/launch_poly.sh
+xfce4-panel -d &
+xfce4-power-manager &
+xfsettingsd
+tlp start
+redshift &
 
 # Gaps
 bspc config window_gap      $gap;

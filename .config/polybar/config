@@ -458,7 +458,7 @@ menu-2-1-exec = menu-open-0
 
 [module/pkg]
 type = custom/script
-interval = 1200
+interval = 600
 format = <label>
 format-padding = 2
 format-margin = 1
@@ -495,7 +495,7 @@ format-padding = 2
 type = custom/script
 exec = python3 ~/.config/polybar/scripts/spoti.py
 ;exec-if = pgrep spotify > /dev/null
-interval = 0.01
+interval = 0.1
 click-left = playerctl -p spotify play-pause
 
 [module/playpause]
@@ -504,7 +504,7 @@ format-padding = 2
 type = custom/script
 ;exec = python3 ~/code/py_scripts/playpause.py
 exec = python3 ~/.config/polybar/scripts/playpause.py
-interval = 0.01
+interval = 0.1
 click-left = ! (playerctl -p spotify play-pause) && mpc toggle
 
 [module/redshift]
