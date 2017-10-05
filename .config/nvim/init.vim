@@ -70,6 +70,7 @@ set background=dark
 colo cupertino-light
 source .vim/colors/cupertino-light.vim
 " filetype plugin on
+set foldlevelstart=20
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1

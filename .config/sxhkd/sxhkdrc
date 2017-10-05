@@ -31,8 +31,8 @@ super + h
 	~/Downloads/hideIt.sh/hideIt.sh -H -N polybar-systray_eDP1 -s 7
 
 # Screenshot via Print Screen
-Print
-	scrot '%m-%d-%Y.png' -e 'mv $f ~/Pictures/Screenshots/'
+# Print
+#	scrot '%m-%d-%Y.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -123,3 +123,11 @@ alt + {Up,Down}
 # focus the next/previous desktop
 super + alt + {Left,Right}
 	bspc desktop -f {prev,next}
+
+ctrl + bracket{left,right}
+    bspc desktop -f {prev,next}
+
+
+# ----
+super + {Left,Down,Up,Right}
+	wm_action wresize {left,down,up,right}

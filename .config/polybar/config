@@ -129,7 +129,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = SauceCodePro Nerd Font:size=11;3
 font-4 = steadysetfeather:size=11;2
 
-modules-left = battery wlan volume
+modules-left = battery wlan volume xbacklight
 
 ;tray-position = left
 ;tray-maxsize = 16
@@ -245,8 +245,11 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = BL
+format-background = ${colors.foreground}
+format-padding = 2
+format = <ramp> <label>
+label = %percentage%
+label-foreground = ${root.foreground}
 
 bar-width = 10
 bar-indicator = |
@@ -258,6 +261,10 @@ bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -346,8 +353,9 @@ type = internal/volume
 
 format-volume-background = ${colors.foreground}
 format-volume-padding = 2
-format-volume = <label-volume> <bar-volume>
-label-volume = 
+format-volume = <ramp-volume> <label-volume>
+;label-volume = 
+label-volume = %percentage%
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
@@ -355,6 +363,10 @@ format-muted-background = ${colors.foreground}
 format-muted-foreground = ${colors.foreground-alt}
 format-muted-padding = 2
 label-muted = sound muted
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #47aa12

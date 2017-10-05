@@ -43,3 +43,8 @@ bspc config presel_feedback_color   "#4c83ad"
 # Rules
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Google Chrome desktop='^2'
+
+# -------
+bspc config pointer_action3 resize_side
+bspc config pointer_action3 resize_corner
+bspc config pointer_action1 move
