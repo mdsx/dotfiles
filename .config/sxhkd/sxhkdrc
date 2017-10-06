@@ -121,11 +121,18 @@ alt + {Up,Down}
 	bspc node -f {prev,next}.local.!above
 
 # focus the next/previous desktop
-super + alt + {Left,Right}
+super + bracket{left,right}
 	bspc desktop -f {prev,next}
 
 ctrl + bracket{left,right}
     bspc desktop -f {prev,next}
+
+# move focused window to the next workspace and then switch to that workspace
+shift + bracket{left,right}
+    id=$(bspc query --nodes --node); bspc node --to-desktop {prev,next}; bspc desktop --focus next; bspc node --focus ${id}
+
+ctrl + shift + bracket{left,right}
+	id=$(bspc query --nodes --node); bspc node --to-desktop {prev,next}
 
 
 # ----

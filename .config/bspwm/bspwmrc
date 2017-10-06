@@ -1,6 +1,6 @@
 #! /bin/sh
 
-gap=10
+gap=8
 XFPANEL_HEIGHT=27
 POLYBAR_HEIGHT=32
 export gap

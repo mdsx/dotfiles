@@ -68,7 +68,7 @@ modules-right = powermenu
 width = 66%
 height = 32
 offset-x = 17%
-offset-y = 10
+offset-y = 8
 fixed-center = true
 bottom = true
 override-redirect = true
@@ -107,7 +107,7 @@ scroll-down = bspwm-deskprev
 width = 20%
 height = 32
 offset-x = -4
-offset-y = 10
+offset-y = 8
 bottom = true
 override-redirect = true
 
@@ -507,7 +507,7 @@ format-padding = 2
 type = custom/script
 exec = python3 ~/.config/polybar/scripts/spoti.py
 ;exec-if = pgrep spotify > /dev/null
-interval = 0.1
+interval = 0.2
 click-left = playerctl -p spotify play-pause
 
 [module/playpause]

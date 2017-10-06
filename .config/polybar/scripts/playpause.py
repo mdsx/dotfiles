@@ -9,9 +9,9 @@ cmd = cmd.split('\n')
 cmd = cmd[0]
 
 if cmd == "Playing":
-     print('')
+    print('')
 elif cmd == 'Paused':
-     print('')
+    print('')
 else:
     try:
         cmd = os.popen('mpc status 2>/dev/null').read()
