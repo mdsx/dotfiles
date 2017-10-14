@@ -17,9 +17,9 @@ nitrogen --restore &
 /home/ms/code/shell_scripts/launch_poly.sh
 xfce4-panel -d &
 xfce4-power-manager &
-xfsettingsd
 tlp start
-redshift &
+xfsettingsd
+libinput-gestures-setup start
 
 # Gaps
 bspc config window_gap      $gap;

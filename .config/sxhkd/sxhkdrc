@@ -8,11 +8,11 @@ super + Return
 
 # rofi drun
 super + p
-	rofi -show drun -font "Source Code Pro 12" -scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
+	rofi -show drun -font "Andale Mono 12" -scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
 
 # rofi switch window
 alt + Tab
-	rofi -show window -font "Source Code Pro 12" -scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
+	rofi -show window -font "Andale Mono 12" -scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
 
 # xfce appmenu
 super + @space
@@ -31,7 +31,8 @@ super + h
 	~/Downloads/hideIt.sh/hideIt.sh -H -N polybar-systray_eDP1 -s 7
 
 # Screenshot via Print Screen
-# Print
+Print
+	xfce4-screenshooter
 #	scrot '%m-%d-%Y.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 # make sxhkd reload its configuration files:
@@ -92,19 +93,19 @@ super + alt + Escape
 # -------------
 
 # rotate windows
-alt + F1
+super + F1
 	bspc node @/ -R 90
 
 # circulate windows
-alt + F2
+super + F2
 	bspc node @/ -C forward
 
 # flip windows horizontal
-alt + F3
+super + F3
 	bspc node @/ -F horizontal
 
 # flip windows vertical
-alt + F4
+super + F4
 	bspc node @/ -F vertical
 
 # set the window state
@@ -124,16 +125,25 @@ alt + {Up,Down}
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
 
-ctrl + bracket{left,right}
+alt + bracket{left,right}
     bspc desktop -f {prev,next}
 
+# For mtrack, but I'm using libinput-gestures instead
+# Four finger swipe (left or right) to change desktop
+# @button{8,9}
+#    bspc desktop -f {prev,next}
+
 # move focused window to the next workspace and then switch to that workspace
-shift + bracket{left,right}
-    id=$(bspc query --nodes --node); bspc node --to-desktop {prev,next}; bspc desktop --focus next; bspc node --focus ${id}
+super + {_,shift +} Tab
+    id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}; bspc desktop --focus next; bspc node --focus ${id}
 
-ctrl + shift + bracket{left,right}
-	id=$(bspc query --nodes --node); bspc node --to-desktop {prev,next}
+super + {_,shift +} grave
+	id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}
 
+# Open/Close empty node (receptacle)
+super + alt + space
+	{smartsplit ; bspc node -i,\
+	for i in $(bspc query -N -n .leaf.!window.local); do bspc node $i -k; done}
 
 # ----
 super + {Left,Down,Up,Right}
