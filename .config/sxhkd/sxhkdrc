@@ -140,11 +140,18 @@ super + {_,shift +} Tab
 super + {_,shift +} grave
 	id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}
 
-# Open/Close empty node (receptacle)
+# Hide/Unhide currently active window
+super + u
+    bspc node @/ -g hidden
+
+# Open/Close empty nodes (receptacles)
 super + alt + space
-	{smartsplit ; bspc node -i,\
-	for i in $(bspc query -N -n .leaf.!window.local); do bspc node $i -k; done}
+	{for i in $(bspc query -N -n .leaf.!window.local); do bspc node $i -k; done}
+
+super + {Left,Down,Up,Right}
+    smartsplit; bspc node @/ -p {west, south, north, east} -i
+	# @/ -p east, @/2 -p north
 
 # ----
-super + {Left,Down,Up,Right}
+super + ctrl + alt + {Left,Down,Up,Right}
 	wm_action wresize {left,down,up,right}
