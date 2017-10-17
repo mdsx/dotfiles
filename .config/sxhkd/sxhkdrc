@@ -8,11 +8,13 @@ super + Return
 
 # rofi drun
 super + p
-	rofi -show drun -font "Andale Mono 12" -scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
+	rofi -show drun -font "Andale Mono 12" -scrollbar-width 2 -bw 20 \
+	-separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
 
 # rofi switch window
 alt + Tab
-	rofi -show window -font "Andale Mono 12" -scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
+	rofi -show window -font "Andale Mono 12" -scrollbar-width 2 -bw 20 \
+	-separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
 
 # xfce appmenu
 super + @space
@@ -128,14 +130,18 @@ super + bracket{left,right}
 alt + bracket{left,right}
     bspc desktop -f {prev,next}
 
-# For mtrack, but I'm using libinput-gestures instead
-# Four finger swipe (left or right) to change desktop
-# @button{8,9}
-#    bspc desktop -f {prev,next}
+# swap the current node and the biggest node
+super + g
+    bspc node -s biggest.local
+
+# toggle monocle
+super + m
+    bspc desktop -l next
 
 # move focused window to the next workspace and then switch to that workspace
 super + {_,shift +} Tab
-    id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}; bspc desktop --focus next; bspc node --focus ${id}
+    id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}; \
+	bspc desktop --focus next; bspc node --focus ${id}
 
 super + {_,shift +} grave
 	id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}
@@ -152,6 +158,14 @@ super + {Left,Down,Up,Right}
     smartsplit; bspc node @/ -p {west, south, north, east} -i
 	# @/ -p east, @/2 -p north
 
-# ----
-super + ctrl + alt + {Left,Down,Up,Right}
-	wm_action wresize {left,down,up,right}
+
+### Unused ---------------------------------------------------------------------
+
+# https://github.com/noctuid/dotfiles/blob/master/remap/.config/sxhkd/sxhkdrc
+# super + ctrl + alt + {Left,Down,Up,Right}
+#	wm_action wresize {left,down,up,right}
+
+# For mtrack, but I'm using libinput-gestures instead
+# Four finger swipe (left or right) to change desktop
+# @button{8,9}
+#    bspc desktop -f {prev,next}
