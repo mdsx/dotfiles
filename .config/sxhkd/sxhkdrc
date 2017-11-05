@@ -6,6 +6,9 @@
 super + Return
 	termite
 
+super + shift + Return
+	termite -d $(pwd)
+
 # rofi drun
 super + p
 	rofi -show drun -font "Andale Mono 12" -scrollbar-width 2 -bw 20 \

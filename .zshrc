@@ -39,8 +39,13 @@ alias py="python"
 alias colors="~/code/color-scripts/color-scripts/panes"
 alias pac="pacaur"
 alias poly="/home/ms/code/shell_scripts/launch_poly.sh"
+alias top="vtop --theme brew"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Greeting
 fortune && ~/code/shell_scripts/totoro_banner
+
+# Default Editor
+export VISUAL=/usr/bin/nvim
+export EDITOR=/usr/bin/nvim

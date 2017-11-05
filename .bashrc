@@ -54,4 +54,6 @@ if command -v zsh>/dev/null; then
   [[ ! $TERM =~ screen ]] && [ -z $ZSH ] && exec zsh
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
