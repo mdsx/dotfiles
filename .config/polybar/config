@@ -21,7 +21,7 @@ fixed-center = true
 override-redirect = true
 wm-restack = bspwm
 
-background = #303030
+background = #e61d1f21
 foreground = #eceff0
 
 line-size = 3
@@ -170,7 +170,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
-format-background = #303030
+format-background = #e61d1f21
 format-padding = 2
 format-margin = 1
 
@@ -277,7 +277,7 @@ interval = 2
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-offset-y = 10
-format-background = #303030
+format-background = #e61d1f21
 format-padding = 2
 format-margin = 1
 label = %percentage%%
@@ -287,7 +287,7 @@ type = internal/memory
 interval = 2
 format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
-format-background = #303030
+format-background = #e61d1f21
 format-padding = 2
 format-margin = 1
 label = %percentage_used%%
@@ -483,7 +483,7 @@ exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 [module/previous]
 type = custom/script
-format-background = #303030
+format-background = #e61d1f21
 format-padding = 2
 format-text = <label>
 label = 
@@ -492,7 +492,7 @@ click-left = ! (exec playerctl previous) && mpc prev
 format-foreground = #eeeeee
 
 [module/next]
-format-background = #303030
+format-background = #e61d1f21
 format-padding = 2
 type = custom/script
 format-text = <label>
@@ -502,7 +502,7 @@ click-left = ! (exec playerctl next) && mpc next
 format-foreground = #eeeeee
 
 [module/spotipy]
-format-background = #303030
+format-background = #e61d1f21
 format-padding = 2
 type = custom/script
 exec = python3 ~/.config/polybar/scripts/spoti.py
@@ -511,7 +511,7 @@ interval = 0.2
 click-left = playerctl -p spotify play-pause
 
 [module/playpause]
-format-background = #303030
+format-background = #e61d1f21
 format-padding = 2
 type = custom/script
 ;exec = python3 ~/code/py_scripts/playpause.py
