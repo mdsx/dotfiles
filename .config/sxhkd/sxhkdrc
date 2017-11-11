@@ -11,8 +11,9 @@ super + shift + Return
 
 # rofi drun
 super + p
-	rofi -show drun -font "Andale Mono 12" -scrollbar-width 2 -bw 20 \
-	-separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
+	rofi -combi-modi drun,run -show combi -modi combi -font "Andale Mono 12" \
+	-scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 \
+	-lines 10 -yoffset -2
 
 # rofi switch window
 alt + Tab
