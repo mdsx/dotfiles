@@ -9,7 +9,7 @@ super + Return
 super + shift + Return
 	termite -d $(pwd)
 
-# rofi drun
+# rofi drun + run
 super + p
 	rofi -combi-modi drun,run -show combi -modi combi -font "Andale Mono 12" \
 	-scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 \

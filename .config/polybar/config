@@ -7,6 +7,8 @@ primary = #ffb52a
 secondary = #D4665D
 alert = #ff4845
 highlight = #288ad6
+bg-transparent = #e61d1f21
+fg-transparent = #e6f1f4f7
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; COLORS ARE ARGB NOT RGBA! ;;
@@ -15,7 +17,7 @@ highlight = #288ad6
 [bar/top]
 width = 49%
 height = 27
-offset-x = 51%
+offset-x = 52%
 offset-y = 0
 fixed-center = true
 override-redirect = true
@@ -245,7 +247,7 @@ label-song-ellipsis = true
 [module/xbacklight]
 type = internal/xbacklight
 
-format-background = ${colors.foreground}
+format-background = ${colors.fg-transparent}
 format-padding = 2
 format = <ramp> <label>
 label = %percentage%
@@ -297,7 +299,7 @@ type = internal/network
 interface = wlp4s0
 interval = 3.0
 
-format-connected-background = ${colors.foreground}
+format-connected-background = ${colors.fg-transparent}
 format-connected-padding = 2
 format-connected =  <label-connected>
 label-connected = %essid%
@@ -351,7 +353,7 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
-format-volume-background = ${colors.foreground}
+format-volume-background = ${colors.fg-transparent}
 format-volume-padding = 2
 format-volume = <ramp-volume> <label-volume>
 ;label-volume = 
@@ -359,7 +361,7 @@ label-volume = %percentage%
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
-format-muted-background = ${colors.foreground}
+format-muted-background = ${colors.fg-transparent}
 format-muted-foreground = ${colors.foreground-alt}
 format-muted-padding = 2
 label-muted = sound muted
@@ -392,19 +394,19 @@ adapter = AC
 full-at = 98
 format-padding = 2
 format-margin-left = 2
-format-background = ${colors.foreground}
+format-background = ${colors.fg-transparent}
 
-format-charging-background = ${colors.foreground}
+format-charging-background = ${colors.fg-transparent}
 format-charging-padding = 2
 format-charging =   <animation-charging> <label-charging>
 
-format-discharging-background = ${colors.foreground}
+format-discharging-background = ${colors.fg-transparent}
 format-discharging-padding = 2
 format-discharging =  <label-discharging>
 
 format-full-prefix = " "
 format-full-prefix-padding = 2
-format-full-prefix-background = ${colors.foreground}
+format-full-prefix-background = ${colors.fg-transparent}
 format-full-prefix-foreground = ${colors.foreground-alt}
 
 ramp-capacity-0 = 
@@ -474,7 +476,7 @@ interval = 60
 format = <label>
 format-padding = 2
 format-margin = 1
-format-background = #D4665D
+format-background = #e6D4665D
 format-foreground = ${colors.background}
 label = "%output:0:30%"
 ;exec = /usr/local/bin/pkg.sh
