@@ -15,7 +15,7 @@ fg-transparent = #e6f1f4f7
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 [bar/top]
-width = 49%
+width = 48%
 height = 27
 offset-x = 52%
 offset-y = 0
@@ -93,6 +93,7 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = SFNS Display:size=11:antialias=true:hinting=none;2
+;font-0 = leggie:size=11:antialias=false:hinting=none;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
 font-2 = siji:pixelsize=10;1
 font-3 = SauceCodePro Nerd Font:size=11;2
@@ -126,6 +127,7 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = SFNS Display:size=11:antialias=true:hinting=none;2
+;font-0 = leggie:size=11:antialias=false:hinting=none;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
 font-2 = siji:pixelsize=10;1
 font-3 = SauceCodePro Nerd Font:size=11;3

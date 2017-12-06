@@ -8,25 +8,25 @@
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
     # info title
-    prin "$(color 0)ms@X1C5"
+    prin "$(color 10)ms@X1C5"
     info underline
 
     info "OS" distro
     # info "Model" model
-    prin "$(color 10)Model: $(color 8)ThinkPad X1 Carbon 5th"
+    prin "$(color 10)Model: $(color 7)ThinkPad X1 Carbon 5th"
     info "Kernel" kernel
     info "Uptime" uptime
     info "Packages" packages
     # info "Shell" shell
-    prin "$(color 10)Shell: $(color 8)zsh"
+    prin "$(color 10)Shell: $(color 7)zsh"
     info "Resolution" resolution
     info "DE" de
     info "WM" wm
     info "WM Theme" wm_theme
     # info "Theme" theme
-    prin "$(color 10)Theme: $(color 8)Arc"
+    prin "$(color 10)Theme: $(color 7)Arc"
     # info "Icons" icons
-    prin "$(color 10)Icons: $(color 8)La Capitaine"
+    prin "$(color 10)Icons: $(color 7)La Capitaine"
     info "Terminal" term
     info "Terminal Font" term_font
     info "CPU" cpu

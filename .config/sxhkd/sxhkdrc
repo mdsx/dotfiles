@@ -30,7 +30,7 @@ super + f
 
 # fancy lock
 super + l
-	i3lock-fancy -pgt '' -f SFNS-Display && systemctl suspend
+	i3lock-fancy -pt '' -f Andale-Mono && systemctl suspend
 
 # hiddle dee hiddle dum
 super + h
@@ -117,6 +117,27 @@ super + F4
 # set the window state
 {F9,F10,F11,F12}
 	bspc node -t {floating,tiled,pseudo_tiled,fullscreen}
+
+
+# ------------
+# preselection
+# ------------
+
+# preselect the direction
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + alt + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 
 # ----------

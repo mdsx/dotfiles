@@ -21,7 +21,10 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 # Set prompt modifications
 # PROMPT='%(?.%F{7}✱.%F{1}✱)%f '
-PROMPT='%(?.%F{7}.%F{1}✱ %F{7})✱%f '
+PROMPT='%(?.%F{7}.%F{1}➜ %F{7})➜%f '
+
+# wal
+(wal -r &)
 
 # Add conda to path
 export PATH="/opt/anaconda/bin:$PATH"
@@ -39,7 +42,7 @@ alias py="python"
 alias colors="~/code/color-scripts/color-scripts/panes"
 alias pac="pacaur"
 alias poly="/home/ms/code/shell_scripts/launch_poly.sh"
-alias top="vtop --theme brew"
+alias vtop="vtop --theme brew"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -49,3 +52,16 @@ fortune && ~/code/shell_scripts/totoro_banner
 # Default Editor
 export VISUAL=/usr/bin/nvim
 export EDITOR=/usr/bin/nvim
+
+# Wrapper to start Ncmpcpp with netcat for audio visualization
+# https://github.com/mopidy/mopidy/issues/775
+#   Start a netcat process in the background to listen for the audio data sent
+#   to the UDP sink and redirect it to the fifo created earlier.
+#   Flags:
+#       -k keep listening after current connection is completed
+#       -l enable listening mode
+#       -u enable UDP mode
+#       -w NUM timeout idle connections after NUM seconds (1 sec in this case)
+# Set an EXIT trap to kill the netcat process when ncmpcpp terminates and causes
+# the function subshell to exit, then start a ncmpcpp process in the foreground.
+nplayer () (nc -kluw 1 127.0.0.1 5555 > /tmp/mpd.fifo & trap "kill $!" EXIT; ncmpcpp)

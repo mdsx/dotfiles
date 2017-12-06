@@ -3,7 +3,7 @@ allow_bold = true
 #audible_bell = false
 clickable_url = true
 #dynamic_title = true
-font = Leggie 12
+font = Andale Mono 12
 #fullscreen = true
 geometry = 750x500
 icon_name = terminal
@@ -34,28 +34,50 @@ filter_unmatched_urls = true
 #size_hints = false
 
 [colors]
-foreground = #1d1f21
-foreground_bold = #1d1f21
-background = #eceff0
+# foreground = #1d1f21
+# foreground_bold = #1d1f21
+# background = #eceff0
 
-# colors from color0 to color254 can be set
-color0 = #3f3f3f
-color1 = #ff4845
-color2 = #288ad6
-color3 = #47aa12
-color4 = #8d938d
-color5 = #6b7db4
-color6 = #babaa9
-color7 = #445e67
+# # colors from color0 to color254 can be set
+# color0 = #3f3f3f
+# color1 = #ff4845
+# color2 = #288ad6
+# color3 = #47aa12
+# color4 = #8d938d
+# color5 = #6b7db4
+# color6 = #babaa9
+# color7 = #445e67
 
-color8 = #303030
-color9 = #D4665D
-color10 = #4c83ad
-color11 = #61854e
-color12 = #6e776e
-color13 = #5f6a8b
-color14 = #a4a493
-color15 = #4b575a
+# color8 = #303030
+# color9 = #D4665D
+# color10 = #4c83ad
+# color11 = #61854e
+# color12 = #6e776e
+# color13 = #5f6a8b
+# color14 = #a4a493
+# color15 = #4b575a
+
+foreground = #dcdccc
+foreground_bold = #dcdccc
+background = #1d1f21
+
+color0 =    #070d0f
+color1 =    #ea5c39
+color2 =    #ee863e
+color3 =    #ee863e
+color4 =    #ef8e6d
+color5 =    #fefbb0
+color6 =    #ef8e6d
+color7 =    #d0cbaf
+
+color8 =    #323232
+color9 =    #ea5c39
+color10 =   #0b161a
+color11 =   #000000
+color12 =   #858585
+color13 =   #b6bdca
+color14 =   #fefbb0
+color15 =   #fffdff
 
 [hints]
 #font = Monospace 12
