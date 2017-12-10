@@ -45,8 +45,10 @@ Print
 super + Escape
 	pkill -USR1 -x sxhkd
 
+# make sxhkd reload its configuration files:
+super + alt + Escape
+	bspc quit
 
-# ----------
 # voume keys
 # ----------
 
@@ -94,28 +96,28 @@ super + alt + Escape
 	bspc quit
 
 
-# -------------
-# function keys
-# -------------
+# ---------------------
+# state and arrangement
+# ---------------------
 
 # rotate windows
-super + F1
+super + 1
 	bspc node @/ -R 90
 
 # circulate windows
-super + F2
+super + 2
 	bspc node @/ -C forward
 
 # flip windows horizontal
-super + F3
+super + 3
 	bspc node @/ -F horizontal
 
 # flip windows vertical
-super + F4
+super + 4
 	bspc node @/ -F vertical
 
 # set the window state
-{F9,F10,F11,F12}
+super + {7,8,9,0}
 	bspc node -t {floating,tiled,pseudo_tiled,fullscreen}
 
 
@@ -143,6 +145,10 @@ super + ctrl + alt + space
 # ----------
 # focus/swap
 # ----------
+
+# go to desktop n
+super + alt + {1,2,3,4,5,6,7,8,9,0}
+	bspc desktop -f {1,2,3,4,5,6,7,8,9,10}
 
 # focus the next/previous node
 alt + {Up,Down}

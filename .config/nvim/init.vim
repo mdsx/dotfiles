@@ -78,6 +78,7 @@ colorscheme wal
 set foldlevelstart=20
 set incsearch
 set ignorecase
+set ts=4 sw=4
 
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
