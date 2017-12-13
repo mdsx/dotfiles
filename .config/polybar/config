@@ -461,7 +461,7 @@ menu-0-1 = power off
 menu-0-1-exec = menu-open-2
 menu-0-2 = 
 ; menu-0-2-exec = i3lock-fancy -pgt '' -f SFNS-Display && systemctl suspend
-menu-0-2-exec = exec /home/ms/Downloads/betterlockscreen/lock.sh -l dimblur
+menu-0-2-exec = exec /home/ms/Downloads/betterlockscreen/lock.sh -l dim
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
