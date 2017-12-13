@@ -30,7 +30,7 @@ super + f
 
 # fancy lock
 super + l
-	exec /home/ms/Downloads/betterlockscreen/lock.sh -l dimblur && systemctl suspend
+	exec /home/ms/Downloads/betterlockscreen/lock.sh -l dimblur &; systemctl suspend
 	# i3lock-fancy -pt '' -f Andale-Mono && systemctl suspend
 
 # hiddle dee hiddle dum: https://github.com/Tadly/hideIt.sh
