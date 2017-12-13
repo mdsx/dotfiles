@@ -30,10 +30,11 @@ super + f
 
 # fancy lock
 super + l
-	i3lock-fancy -pt '' -f Andale-Mono && systemctl suspend
+	exec /home/ms/Downloads/betterlockscreen/lock.sh -l dimblur && systemctl suspend
+	# i3lock-fancy -pt '' -f Andale-Mono && systemctl suspend
 
-# hiddle dee hiddle dum
-super + h
+# hiddle dee hiddle dum: https://github.com/Tadly/hideIt.sh
+super + alt + h
 	~/Downloads/hideIt.sh/hideIt.sh -H -N polybar-systray_eDP1 -s 7
 
 # Screenshot via Print Screen
@@ -128,6 +129,10 @@ super + {7,8,9,0}
 # preselect the direction
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -p {west,south,north,east}
+
+# common splits
+super + {h,v}
+	bspc node -p {east,south}
 
 # preselect the ratio
 super + ctrl + {1-9}

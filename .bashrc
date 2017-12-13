@@ -57,3 +57,5 @@ fi
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
+
+# source /usr/share/autojump/autojump.bash

@@ -26,6 +26,9 @@ PROMPT='%(?.%F{7}.%F{1}➜ %F{7})➜%f '
 # wal
 (wal -r &)
 
+# autojump
+source /usr/share/autojump/autojump.zsh
+
 # Add conda to path
 export PATH="/opt/anaconda/bin:$PATH"
 
@@ -34,6 +37,7 @@ export TERM=xterm-256color
 # export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # Aliases
+alias c="clear"
 alias vi="nvim"
 alias srcd="source deactivate"
 alias py27="source /home/ms/.conda/envs/py27/bin/activate py27"
@@ -43,6 +47,7 @@ alias colors="~/code/color-scripts/color-scripts/panes"
 alias pac="pacaur"
 alias poly="/home/ms/code/shell_scripts/launch_poly.sh"
 alias vtop="vtop --theme brew"
+alias how="howdoi -c -n 3"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
