@@ -4,69 +4,69 @@
 
 # terminal emulator
 super + Return
-	termite
+    termite
 
 super + shift + Return
-	termite -d $(pwd)
+    termite -d $(pwd)
 
 # rofi drun + run
 super + p
-	rofi -combi-modi drun,run -show combi -modi combi -font "Andale Mono 12" \
-	-scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 \
-	-lines 10 -yoffset -2
+    rofi -combi-modi drun,run -show combi -modi combi -font "Andale Mono 12" \
+    -scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 \
+    -lines 10 -yoffset -2
 
 # rofi switch window
 alt + Tab
-	rofi -show window -font "Andale Mono 12" -scrollbar-width 2 -bw 20 \
-	-separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
+    rofi -show window -font "Andale Mono 12" -scrollbar-width 2 -bw 20 \
+    -separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
 
 # xfce appmenu
 super + @space
-	xfce4-popup-whiskermenu
+    xfce4-popup-whiskermenu
 
 # thunar
 super + f
-	thunar
+    thunar
 
 # fancy lock
 super + l
-	exec /home/ms/Downloads/betterlockscreen/lock.sh -l dim &; systemctl suspend
-	# i3lock-fancy -pt '' -f Andale-Mono && systemctl suspend
+    exec /home/ms/Downloads/betterlockscreen/lock.sh -l dim &; systemctl suspend
+    # i3lock-fancy -pt '' -f Andale-Mono && systemctl suspend
 
 # hiddle dee hiddle dum: https://github.com/Tadly/hideIt.sh
 super + alt + h
-	~/Downloads/hideIt.sh/hideIt.sh -H -N polybar-systray_eDP1 -s 7
+    ~/Downloads/hideIt.sh/hideIt.sh -H -N polybar-systray_eDP1 -s 7
 
 # Screenshot via Print Screen
 Print
-	xfce4-screenshooter
-#	scrot '%m-%d-%Y.png' -e 'mv $f ~/Pictures/Screenshots/'
+    xfce4-screenshooter
+#   scrot '%m-%d-%Y.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd
 
 # make sxhkd reload its configuration files:
 super + alt + Escape
-	bspc quit
+    bspc quit
 
 # voume keys
 # ----------
 
 XF86AudioMute
-	amixer set Master toggle ; pkill not-stat ; not-stat Mt
+    amixer set Master toggle ; pkill not-stat ; not-stat Mt
 
 XF86AudioLowerVolume
-	amixer set Master 2%- ; pkill not-stat ; not-stat Vl
+    amixer set Master 2%- ; pkill not-stat ; not-stat Vl
 
 XF86AudioRaiseVolume
-	amixer set Master 2%+ ; pkill not-stat ; not-stat Vl
+    amixer set Master 2%+ ; pkill not-stat ; not-stat Vl
 
 super + XF86AudioRaiseVolume
-	amixer set Master 1%+ ; pkill not-stat ; not-stat Vl
+    amixer set Master 1%+ ; pkill not-stat ; not-stat Vl
 
 super + XF86AudioLowerVolume
-	amixer set Master 1%- ; pkill not-stat ; not-stat Vl
+    amixer set Master 1%- ; pkill not-stat ; not-stat Vl
 
 
 # ---------------
@@ -74,10 +74,10 @@ super + XF86AudioLowerVolume
 # ---------------
 
 XF86MonBrightnessDown
-	xbacklight -dec 5
+    xbacklight -dec 5
 
 XF86MonBrightnessUp
-	xbacklight -inc 5
+    xbacklight -inc 5
 
 
 # -------------
@@ -86,15 +86,15 @@ XF86MonBrightnessUp
 
 # reload bspwmrc
 super + b
-	/home/ms/.config/bspwm/bspwmrc
+    /home/ms/.config/bspwm/bspwmrc
 
 # close window
 super + q
-	bspc node -c
+    bspc node -c
 
 # quit bspwm normally
 super + alt + Escape
-	bspc quit
+    bspc quit
 
 
 # ---------------------
@@ -103,23 +103,23 @@ super + alt + Escape
 
 # rotate windows
 super + 1
-	bspc node @/ -R 90
+    bspc node @/ -R 90
 
 # circulate windows
 super + 2
-	bspc node @/ -C forward
+    bspc node @/ -C forward
 
 # flip windows horizontal
 super + 3
-	bspc node @/ -F horizontal
+    bspc node @/ -F horizontal
 
 # flip windows vertical
 super + 4
-	bspc node @/ -F vertical
+    bspc node @/ -F vertical
 
 # set the window state
 super + {7,8,9,0}
-	bspc node -t {floating,tiled,pseudo_tiled,fullscreen}
+    bspc node -t {floating,tiled,pseudo_tiled,fullscreen}
 
 
 # ------------
@@ -128,23 +128,23 @@ super + {7,8,9,0}
 
 # preselect the direction
 super + ctrl + {Left,Down,Up,Right}
-	bspc node -p {west,south,north,east}
+    bspc node -p {west,south,north,east}
 
 # common splits
 super + {h,v}
-	bspc node -p {east,south}
+    bspc node -p {east,south}
 
 # preselect the ratio
 super + ctrl + {1-9}
-	bspc node -o 0.{1-9}
+    bspc node -o 0.{1-9}
 
 # cancel the preselection for the focused node
 super + ctrl + space
-	bspc node -p cancel
+    bspc node -p cancel
 
 # cancel the preselection for the focused desktop
 super + ctrl + alt + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+    bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 
 # ----------
@@ -153,15 +153,15 @@ super + ctrl + alt + space
 
 # go to desktop n
 super + alt + {1,2,3,4,5,6,7,8,9,0}
-	bspc desktop -f {1,2,3,4,5,6,7,8,9,10}
+    bspc desktop -f {1,2,3,4,5,6,7,8,9,10}
 
 # focus the next/previous node
 alt + {Up,Down}
-	bspc node -f {prev,next}.local.!above
+    bspc node -f {prev,next}.local.!above
 
 # focus the next/previous desktop
 super + bracket{left,right}
-	bspc desktop -f {prev,next}
+    bspc desktop -f {prev,next}
 
 alt + bracket{left,right}
     bspc desktop -f {prev,next}
@@ -177,10 +177,10 @@ super + m
 # move focused window to the next workspace and then switch to that workspace
 super + {_,shift +} Tab
     id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}; \
-	bspc desktop --focus next; bspc node --focus ${id}
+    bspc desktop --focus next; bspc node --focus ${id}
 
 super + {_,shift +} grave
-	id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}
+    id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}
 
 # Hide/Unhide currently active window
 super + u
@@ -188,18 +188,18 @@ super + u
 
 # Open/Close empty nodes (receptacles)
 super + alt + space
-	{for i in $(bspc query -N -n .leaf.!window.local); do bspc node $i -k; done}
+    {for i in $(bspc query -N -n .leaf.!window.local); do bspc node $i -k; done}
 
 super + {Left,Down,Up,Right}
     smartsplit; bspc node @/ -p {west, south, north, east} -i
-	# @/ -p east, @/2 -p north
+    # @/ -p east, @/2 -p north
 
 
 ### Unused ---------------------------------------------------------------------
 
 # https://github.com/noctuid/dotfiles/blob/master/remap/.config/sxhkd/sxhkdrc
 # super + ctrl + alt + {Left,Down,Up,Right}
-#	wm_action wresize {left,down,up,right}
+#   wm_action wresize {left,down,up,right}
 
 # For mtrack, but I'm using libinput-gestures instead
 # Four finger swipe (left or right) to change desktop
