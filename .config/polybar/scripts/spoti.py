@@ -10,10 +10,9 @@ if gui_cmd != 'Not available':
     meta_artist = os.popen('playerctl -p spotify metadata xesam:artist').read()
     meta_title = os.popen('playerctl -p spotify metadata xesam:title').read()
 
-    if gui_cmd == "Playing":
-        print(meta_title + ' - ' + meta_artist)
-    elif gui_cmd == 'Paused':
-        print(meta_title + ' - ' + meta_artist)
+    print(meta_artist + ' - ' + meta_title)
+    #  if gui_cmd in ["Playing", "Paused"]:
+        #  print(meta_artist + ' - ' + meta_title)
 else:
     cmd = os.popen('mpc status 2>/dev/null').read()
     cmd = cmd.split('\n')

@@ -68,7 +68,7 @@ let g:airline_symbols.linenr = ''
 
 " Settings
 " set termguicolors
-set relativenumber
+set number relativenumber
 syntax enable
 set background=dark
 " colo cupertino-light
@@ -104,3 +104,8 @@ let g:pymode_options_colorcolumn = 0
 " map <C-p> :Files<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <C-l> :ALEToggle<CR>
+map <C-a>  ggVG<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
