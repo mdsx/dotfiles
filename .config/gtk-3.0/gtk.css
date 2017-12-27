@@ -1,5 +1,10 @@
 .-vala-panel-appmenu-private {
 	color:#eceff0;
+    font-weight:normal;
+}
+
+.-vala-panel-appmenu-private:nth-child(1) {
+  font-weight:bold;
 }
 
 VteTerminal, vte-terminal {
