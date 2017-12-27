@@ -11,7 +11,7 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 # Autostart
 sxhkd &
-# source /home/ms/.config/bspwm/autostart
+/usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1 &
 compton -b &
 nitrogen --restore &
 /home/ms/code/shell_scripts/launch_poly.sh
@@ -30,10 +30,10 @@ bspc config right_padding   $gap
 bspc config bottom_padding  $(($POLYBAR_HEIGHT + 2 * $gap))
 
 # Misc
-bspc config split_ratio          0.50
-bspc config focus_follows_pointer true
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config split_ratio             0.50
+bspc config focus_follows_pointer   true
+bspc config borderless_monocle      true
+bspc config gapless_monocle         true
 
 # Borders
 bspc config border_width            6
@@ -51,12 +51,12 @@ bspc config focused_border_color "$color15"
 bspc config presel_border_color "$color1"
 
 # Rules
-bspc rule -a peek 				state=floating
-bspc rule -a Orage 				state=floating
-bspc rule -a Galculator 		state=floating
-bspc rule -a "*:virtualbox"		state=floating
-bspc rule -a "*:pulseeffects" 	desktop=9 state=floating follow=on
-bspc rule -a "*:nitrogen" 		desktop=9 follow=on
+bspc rule -a peek 				        state=floating
+bspc rule -a Orage 				        state=floating
+bspc rule -a Galculator 		        state=floating
+bspc rule -a "*:virtualbox"		        state=floating
+bspc rule -a "*:pulseeffects" 	        desktop=9 state=floating follow=on
+bspc rule -a "*:nitrogen" 		        desktop=9 follow=on
 bspc rule -a "*:messengerfordesktop" 	desktop=8 follow=on
 
 # bspc rule -a Gimp desktop='^8' state=floating follow=on

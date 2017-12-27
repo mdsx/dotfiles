@@ -11,14 +11,15 @@ super + shift + Return
 
 # rofi drun + run
 super + p
-    rofi -combi-modi drun,run -show combi -modi combi -font "Andale Mono 12" \
-    -scrollbar-width 2 -bw 20 -separator-style solid -width 100 -location 1 \
-    -lines 10 -yoffset -2
+    rofi -combi-modi drun,run -show combi -modi combi,window -font "Andale Mono 12" \
+    -scrollbar-width 2 -bw 18 -separator-style solid -width 100 -location 1 \
+    -lines 10 -yoffset -4 -columns 3
+    # rofi -modi run,drun,window -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font "Andale Mono 11"
 
 # rofi switch window
 alt + Tab
-    rofi -show window -font "Andale Mono 12" -scrollbar-width 2 -bw 20 \
-    -separator-style solid -width 100 -location 1 -lines 10 -yoffset -2
+    rofi -show window -font "Andale Mono 11" -scrollbar-width 2 -bw 18 \
+    -separator-style solid -width 100 -location 1 -lines 10 -yoffset -4
 
 # xfce appmenu
 super + @space
