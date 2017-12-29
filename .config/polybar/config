@@ -16,7 +16,7 @@ fg-transparent = #e6f1f4f7
 
 [bar/top]
 width = 48%
-height = 27
+height = 24
 offset-x = 52%
 offset-y = 0
 fixed-center = true
@@ -69,7 +69,7 @@ modules-right = powermenu
 
 [bar/low]
 width = 66%
-height = 32
+height = 30
 offset-x = 17%
 offset-y = 8
 fixed-center = true
@@ -109,7 +109,7 @@ scroll-down = bspwm-deskprev
 
 [bar/systray]
 width = 35%
-height = 32
+height = 30
 offset-x = -4
 offset-y = 8
 bottom = true
@@ -479,7 +479,7 @@ menu-2-1-exec = menu-open-0
 type = custom/script
 interval = 60
 format = <label>
-format-padding = 2
+format-padding = 1
 format-margin = 1
 format-background = #e6D4665D
 format-foreground = ${colors.background}

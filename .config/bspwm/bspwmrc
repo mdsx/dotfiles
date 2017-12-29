@@ -1,8 +1,8 @@
 #! /bin/sh
 
 gap=8
-XFPANEL_HEIGHT=27
-POLYBAR_HEIGHT=32
+XFPANEL_HEIGHT=24
+POLYBAR_HEIGHT=30
 export gap
 export XFPANEL_HEIGHT
 export POLYBAR_HEIGHT
@@ -20,7 +20,7 @@ xfce4-power-manager &
 tlp start
 xfsettingsd
 libinput-gestures-setup start
-wal -R -n -t
+wal -R -n
 
 # Gaps
 bspc config window_gap      $gap;

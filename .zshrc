@@ -24,7 +24,8 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 PROMPT='%(?.%F{7}.%F{1}➜ %F{7})➜%f '
 
 # wal
-(wal -r &)
+# (wal -r &)
+(cat ~/.cache/wal/sequences &)
 
 # autojump
 source /usr/share/autojump/autojump.zsh
