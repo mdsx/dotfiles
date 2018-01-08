@@ -132,7 +132,7 @@ super + ctrl + {Left,Down,Up,Right}
     bspc node -p {west,south,north,east}
 
 # common splits
-super + {h,v}
+super + {v,h}
     bspc node -p {east,south}
 
 # preselect the ratio

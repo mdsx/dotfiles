@@ -34,27 +34,27 @@ filter_unmatched_urls = true
 #size_hints = false
 
 [colors]
-foreground = #dcdccc
-foreground_bold = #dcdccc
-background = #1d1f21
+foreground = #1d1f21
+foreground_bold = #1d1f21
+background = #FFF8EB
 
-color0 =    #070d0f
-color1 =    #ea5c39
-color2 =    #ee863e
-color3 =    #ee863e
-color4 =    #ef8e6d
-color5 =    #fefbb0
-color6 =    #ef8e6d
-color7 =    #d0cbaf
+color0 =    #1d1f21
+color1 =    #706D6D
+color2 =    #8C7765
+color3 =    #73837E
+color4 =    #C5946D
+color5 =    #918E8C
+color6 =    #AAA5A2
+color7 =    #5e574c
 
-color8 =    #323232
-color9 =    #ea5c39
-color10 =   #0b161a
-color11 =   #000000
-color12 =   #858585
-color13 =   #b6bdca
-color14 =   #fefbb0
-color15 =   #fffdff
+color8 =    #93908c
+color9 =    #706D6D
+color10 =   #8C7765
+color11 =   #73837E
+color12 =   #C5946D
+color13 =   #918E8C
+color14 =   #AAA5A2
+color15 =   #5e574c
 
 [hints]
 #font = Monospace 12

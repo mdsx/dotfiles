@@ -21,11 +21,11 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 # Set prompt modifications
 # PROMPT='%(?.%F{7}✱.%F{1}✱)%f '
-PROMPT='%(?.%F{7}.%F{1}➜ %F{7})➜%f '
+# PROMPT='%(?.%F{7}.%F{1}➜ %F{7})➜%f '
+PROMPT='%(?.%F{7}.%F{4}➙ %F{7})➙%f '
 
 # wal
-# (wal -r &)
-(cat ~/.cache/wal/sequences &)
+# (cat ~/.cache/wal/sequences &)
 
 # autojump
 source /usr/share/autojump/autojump.zsh

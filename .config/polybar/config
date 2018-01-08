@@ -99,10 +99,11 @@ font-0 = Andale Mono:size=11:antialias=true:hinting=slight;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
 font-2 = siji:pixelsize=10;1
 font-3 = SauceCodePro Nerd Font:size=11;2
-font-4 = feather:size=11;2
+font-4 = steadysetfeather:size=11;2
 
-modules-center = pkg bspwm cpu memory spacer spotipy previous playpause next
-; modules-center = pkg bspwm cpu memory
+; modules-center = pkg bspwm cpu memory spacer spotipy previous playpause next
+; modules-center = pkg cpu memory bspwm battery volume xbacklight wlan
+modules-center = pkg bspwm cpu memory
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
@@ -280,7 +281,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-offset-y = 10
 format-background = #e61d1f21
@@ -291,7 +292,7 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-background = #e61d1f21
 format-padding = 1

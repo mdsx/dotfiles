@@ -20,7 +20,7 @@ xfce4-power-manager &
 tlp start
 xfsettingsd
 libinput-gestures-setup start
-wal -R -n
+# wal -R -n
 
 # Gaps
 bspc config window_gap      $gap;
@@ -37,27 +37,29 @@ bspc config gapless_monocle         true
 
 # Borders
 bspc config border_width            6
-# bspc config focused_border_color    "#4c83ad"
-# bspc config normal_border_color     "#eceff0"
-# bspc config presel_feedback_color   "#4c83ad"
+bspc config focused_border_color    "#262422"
+bspc config normal_border_color     "#73837E"
+bspc config presel_feedback_color   "#262422"
 
-# source the colors.
-. "${HOME}/.cache/wal/colors.sh"
+# # wal
+# # source the colors.
+# . "${HOME}/.cache/wal/colors.sh"
 
-# Set the border colors.
-bspc config normal_border_color "$color1"
-bspc config active_border_color "$color2"
-bspc config focused_border_color "$color15"
-bspc config presel_border_color "$color1"
+# # Set the border colors.
+# bspc config normal_border_color "$color1"
+# bspc config active_border_color "$color2"
+# bspc config focused_border_color "$color15"
+# bspc config presel_border_color "$color1"
 
 # Rules
 bspc rule -a peek 				        state=floating
 bspc rule -a Orage 				        state=floating
 bspc rule -a Galculator 		        state=floating
+bspc rule -a "*:nitrogen" 		        state=floating
 bspc rule -a "*:virtualbox"		        state=floating
 bspc rule -a "*:pulseeffects" 	        desktop=9 state=floating follow=on
-bspc rule -a "*:nitrogen" 		        desktop=9 follow=on
 bspc rule -a "*:messengerfordesktop" 	desktop=8 follow=on
+bspc rule -a "*:spotify"                desktop=10 follow=on
 
 # bspc rule -a Gimp desktop='^8' state=floating follow=on
 # bspc rule -a Google Chrome desktop='^2'
