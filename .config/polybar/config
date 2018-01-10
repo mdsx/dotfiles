@@ -340,10 +340,10 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
-date = " %m/%d/%Y"
-date-alt = " %Y-%m-%d"
+date = 
+date-alt = " %m/%d/%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -354,7 +354,8 @@ format-padding = 1
 format-margin = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
-label = %time%
+label = %time%%date%
+; click-right = orage
 
 [module/volume]
 type = internal/volume
