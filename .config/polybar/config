@@ -49,7 +49,7 @@ font-4 = feather:size=11;2
 ;modules-left = bspwm
 ;modules-center = date
 ;modules-right = memory cpu wlan eth battery pkg powermenu
-modules-right = powermenu
+; modules-right = powermenu
 
 ;tray-position = left
 ;tray-padding = 2
@@ -103,7 +103,7 @@ font-4 = steadysetfeather:size=11;2
 
 ; modules-center = pkg bspwm cpu memory spacer spotipy previous playpause next
 ; modules-center = pkg cpu memory bspwm battery volume xbacklight wlan
-modules-center = pkg bspwm cpu memory
+modules-center = pkg date bspwm cpu memory
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
@@ -136,7 +136,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = SauceCodePro Nerd Font:size=11;3
 font-4 = steadysetfeather:size=11;2
 
-modules-left = battery wlan volume xbacklight
+modules-left = battery wlan volume xbacklight powermenu
 
 ;tray-position = left
 ;tray-maxsize = 16
@@ -342,18 +342,19 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
+date = " %m/%d/%Y"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-background = #288ad6
-label-foreground = ${colors.background}
-format-padding = 2
-format-prefix = 
-format-prefix-foreground = ${colors.background}
-label = %date% %time%
+format-background = #576662
+label-foreground = ${colors.foreground}
+format-padding = 1
+format-margin = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+label = %time%
 
 [module/volume]
 type = internal/volume
@@ -368,7 +369,7 @@ label-volume-foreground = ${root.foreground}
 format-muted-prefix = " "
 format-muted-background = ${colors.fg-transparent}
 format-muted-foreground = ${colors.foreground-alt}
-format-muted-padding = 2
+format-muted-padding = 1
 label-muted = sound muted
 
 ramp-volume-0 = 
@@ -448,32 +449,41 @@ ramp-foreground = ${colors.foreground-alt}
 [module/powermenu]
 type = custom/menu
 
-format-spacing = 1
+format-spacing = 0
 
 ;label-open = 
-label-open = ""
+label-open = "  "
 label-open-foreground = ${colors.alert}
-label-close =  cancel
+label-open-background = ${colors.fg-transparent}
+label-close = "  "
 label-close-foreground = ${colors.secondary}
-label-separator = |
+label-close-background = ${colors.fg-transparent}
+label-separator = 
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
+menu-0-0 = " reboot "
+menu-0-0-background = ${colors.fg-transparent}
 menu-0-0-exec = menu-open-1
-menu-0-1 = power off
+menu-0-1 = " power off "
+menu-0-1-background = ${colors.fg-transparent}
 menu-0-1-exec = menu-open-2
-menu-0-2 = 
+menu-0-2 = "  "
+menu-0-2-background = ${colors.fg-transparent}
 ; menu-0-2-exec = i3lock-fancy -pgt '' -f SFNS-Display && systemctl suspend
 menu-0-2-exec = exec /home/ms/Downloads/betterlockscreen/lock.sh -l dim
 
-menu-1-0 = cancel
+menu-1-0 = " cancel "
+menu-1-0-background = ${colors.fg-transparent}
 menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
+menu-1-1 = " reboot "
+menu-1-1-background = ${colors.fg-transparent}
 menu-1-1-exec = reboot
 
-menu-2-0 = power off
+menu-2-0 = " power off "
+menu-2-0-background = ${colors.fg-transparent}
 menu-2-0-exec = poweroff
-menu-2-1 = cancel
+menu-2-1 = " cancel "
+menu-2-1-background = ${colors.fg-transparent}
 menu-2-1-exec = menu-open-0
 
 [module/pkg]

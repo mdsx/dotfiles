@@ -23,7 +23,8 @@ alt + Tab
 
 # xfce appmenu
 super + @space
-    xfce4-popup-whiskermenu
+    xfce4-appfinder
+    # xfce4-popup-whiskermenu
 
 # thunar
 super + f
