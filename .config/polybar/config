@@ -1,6 +1,6 @@
 [colors]
 background = #1d1f21
-background-alt = #444
+background-alt = #434343
 foreground = #f1f4f7
 foreground-alt = #a2a4a2
 primary = #ffb52a
@@ -68,9 +68,9 @@ font-4 = feather:size=11;2
 ;scroll-down = i3wm-wsprev
 
 [bar/low]
-width = 66%
+width = 100%
 height = 30
-offset-x = 17%
+offset-x = 0%
 offset-y = 8
 fixed-center = true
 bottom = true
@@ -103,7 +103,9 @@ font-4 = steadysetfeather:size=11;2
 
 ; modules-center = pkg bspwm cpu memory spacer spotipy previous playpause next
 ; modules-center = pkg cpu memory bspwm battery volume xbacklight wlan
-modules-center = pkg date bspwm cpu memory
+modules-left = battery cpu memory wlan
+modules-center = pkg bspwm date 
+modules-right = volume xbacklight powermenu
 
 scroll-up = bspwm-desknext
 scroll-down = bspwm-deskprev
@@ -136,7 +138,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = SauceCodePro Nerd Font:size=11;3
 font-4 = steadysetfeather:size=11;2
 
-modules-left = battery wlan volume xbacklight powermenu
+modules-left = battery wlan  volume xbacklight powermenu
 
 ;tray-position = left
 ;tray-maxsize = 16
@@ -253,10 +255,11 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format-background = ${colors.fg-transparent}
+format-foreground = ${colors.background-alt}
 format-padding = 1
 format = <ramp> <label>
 label = %percentage%
-label-foreground = ${root.foreground}
+label-foreground = ${colors.background-alt}
 
 bar-width = 10
 bar-indicator = |
@@ -281,23 +284,25 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
+format-background = ${colors.fg-transparent}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-offset-y = 10
-format-background = #e61d1f21
 format-padding = 1
-format-margin = 1
+format-margin = 0
 label = %percentage%%
+label-foreground = ${colors.background-alt}
 
 [module/memory]
 type = internal/memory
 interval = 2
+format-background = ${colors.fg-transparent}
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-background = #e61d1f21
 format-padding = 1
 format-margin = 0
 label = %percentage_used%%
+label-foreground = ${colors.background-alt}
 
 [module/wlan]
 type = internal/network
@@ -305,8 +310,9 @@ interface = wlp4s0
 interval = 3.0
 
 format-connected-background = ${colors.fg-transparent}
+format-connected-foreground = ${colors.background-alt}
 format-connected-padding = 1
-format-connected =  <label-connected>
+format-connected = " <label-connected>"
 label-connected = %essid%
 
 format-disconnected =
@@ -361,11 +367,12 @@ label = %time%%date%
 type = internal/volume
 
 format-volume-background = ${colors.fg-transparent}
+format-volume-foreground = ${colors.background-alt}
 format-volume-padding = 1
 format-volume = <ramp-volume> <label-volume>
 ;label-volume = 
 label-volume = %percentage%
-label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${colors.background-alt}
 
 format-muted-prefix = " "
 format-muted-background = ${colors.fg-transparent}
@@ -402,14 +409,21 @@ full-at = 98
 format-padding = 1
 format-margin-left = 0
 format-background = ${colors.fg-transparent}
+format-foreground = ${colors.background-alt}
 
 format-charging-background = ${colors.fg-transparent}
+format-charging-foreground = ${colors.background-alt}
+label-charging-foreground = ${colors.background-alt}
 format-charging-padding = 1
-format-charging =  <animation-charging> <label-charging>
+format-charging = "<animation-charging> <label-charging>"
+format-charging-prefix = " "
 
 format-discharging-background = ${colors.fg-transparent}
+format-discharging-foreground = ${colors.background-alt}
+label-discharging-foreground = ${colors.background-alt}
 format-discharging-padding = 1
-format-discharging =  <label-discharging>
+format-discharging = "<label-discharging>"
+format-discharging-prefix = "  " 
 
 format-full-prefix = " "
 format-full-prefix-padding = 1
@@ -449,6 +463,7 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
+expand-right = false
 
 format-spacing = 0
 
@@ -464,27 +479,34 @@ label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = " reboot "
 menu-0-0-background = ${colors.fg-transparent}
+menu-0-0-foreground = ${colors.background-alt}
 menu-0-0-exec = menu-open-1
 menu-0-1 = " power off "
 menu-0-1-background = ${colors.fg-transparent}
+menu-0-1-foreground = ${colors.background-alt}
 menu-0-1-exec = menu-open-2
 menu-0-2 = "  "
 menu-0-2-background = ${colors.fg-transparent}
+menu-0-2-foreground = ${colors.background-alt}
 ; menu-0-2-exec = i3lock-fancy -pgt '' -f SFNS-Display && systemctl suspend
 menu-0-2-exec = exec /home/ms/Downloads/betterlockscreen/lock.sh -l dim
 
 menu-1-0 = " cancel "
 menu-1-0-background = ${colors.fg-transparent}
+menu-1-0-foreground = ${colors.background-alt}
 menu-1-0-exec = menu-open-0
 menu-1-1 = " reboot "
 menu-1-1-background = ${colors.fg-transparent}
+menu-1-1-foreground = ${colors.background-alt}
 menu-1-1-exec = reboot
 
 menu-2-0 = " power off "
 menu-2-0-background = ${colors.fg-transparent}
+menu-2-0-foreground = ${colors.background-alt}
 menu-2-0-exec = poweroff
 menu-2-1 = " cancel "
 menu-2-1-background = ${colors.fg-transparent}
+menu-2-1-foreground = ${colors.background-alt}
 menu-2-1-exec = menu-open-0
 
 [module/pkg]

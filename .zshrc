@@ -49,6 +49,7 @@ alias pac="pacaur"
 alias poly="/home/ms/code/shell_scripts/launch_poly.sh"
 alias vtop="vtop --theme brew"
 alias how="howdoi -c -n 3"
+alias def="dict -d gcide"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
