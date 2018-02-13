@@ -185,8 +185,8 @@ format-margin = 0
 
 ;label-focused = %index%
 label-focused = ""
-label-focused-background = #e6007acc
-label-focused-foreground = ${colors.foreground}
+label-focused-background = #e6e88274
+label-focused-foreground = ${colors.background}
 label-focused-padding = 1
 
 ;label-occupied = %index%
@@ -356,12 +356,12 @@ date-alt = " %m/%d/%Y"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-background = #e6007acc
-label-foreground = ${colors.foreground}
+format-background = #e6e88274
+label-foreground = ${colors.background}
 format-padding = 1
 format-margin = 1
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
+format-prefix-foreground = ${colors.background}
 label = %time%%date%
 ; click-right = orage
 
