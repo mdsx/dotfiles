@@ -16,7 +16,7 @@ let g:colors_name = "cupertino-light"
 "hi CTagsMember -- no settings --
 "hi CTagsGlobalConstant -- no settings --
 "hi Ignore -- no settings --
-hi Normal guifg=#303030 guibg=#eceff0 guisp=#eceff0 gui=NONE ctermfg=236 ctermbg=255 cterm=NONE
+hi Normal guifg=#303030 guibg=#fafafa guisp=#fafafa gui=NONE ctermfg=236 ctermbg=255 cterm=NONE
 "hi CTagsImport -- no settings --
 "hi CTagsGlobalVariable -- no settings --
 "hi EnumerationValue -- no settings --

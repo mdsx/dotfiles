@@ -22,7 +22,7 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 # Set prompt modifications
 # PROMPT='%(?.%F{7}✱.%F{1}✱)%f '
 # PROMPT='%(?.%F{7}.%F{1}➜ %F{7})➜%f '
-PROMPT='%(?.%F{7}.%F{4}➙ %F{7})➙%f '
+PROMPT='%(?.%F{7}.%F{4}× %F{7})>%f '
 
 # wal
 # (cat ~/.cache/wal/sequences &)

@@ -35,7 +35,7 @@ call plug#end()
 
 " lightline
 let g:lightline = {
-    \ 'colorscheme': 'one',
+    \ 'colorscheme': 'wombat',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -46,13 +46,13 @@ let g:lightline = {
     \ }
 
 " Settings
-" set termguicolors
+set termguicolors
 set number relativenumber
 syntax enable
 set background=dark
-" colo cupertino-light
-" source .vim/colors/cupertino-light.vim
-colorscheme wal
+colo cupertino-light
+source .vim/colors/cupertino-light.vim
+" colorscheme wal
 " filetype plugin on
 set foldlevelstart=20
 set incsearch
