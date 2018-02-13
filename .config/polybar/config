@@ -69,9 +69,9 @@ font-4 = feather:size=11;2
 ;scroll-down = i3wm-wsprev
 
 [bar/low]
-width = 90%
+width = 80%
 height = 30
-offset-x = 5%
+offset-x = 10%
 offset-y = 8
 fixed-center = true
 bottom = true
