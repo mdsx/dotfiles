@@ -52,6 +52,7 @@ alias poly="/home/ms/code/bash/launch_poly.sh"
 alias vtop="vtop --theme wizard"
 alias how="howdoi -c -n 3"
 alias def="dict -d gcide"
+# alias calendar="/home/ms/.config/polybar/scripts/calendar.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

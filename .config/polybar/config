@@ -589,6 +589,7 @@ format-padding = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.background}
 exec = date +"%a %-l:%M %p"
+click-left = exec /home/ms/.config/polybar/scripts/calendar.sh
 
 [settings]
 screenchange-reload = true
