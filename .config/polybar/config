@@ -1,5 +1,5 @@
 [colors]
-background = #1d1f21
+background = #192124
 background-alt = #434343
 foreground = #f1f4f7
 foreground-alt = #737a8a
@@ -70,7 +70,7 @@ font-4 = feather:size=11;2
 
 [bar/low]
 width = 80%
-height = 30
+height = 32
 offset-x = 10%
 offset-y = 8
 fixed-center = true
@@ -79,7 +79,7 @@ override-redirect = true
 wm-restack = bspwm
 ;spacing = 5
 
-background = #e61d1f21
+background = #192124
 foreground = #eceff0
 
 line-size = 3
@@ -95,8 +95,8 @@ module-margin-left = 0
 module-margin-right = 0
 
 ; font-0 = SFNS Display:size=11:antialias=true:hinting=slight;2
-; font-0 = leggie:size=11:antialias=false:hinting=none;2
-font-0 = Source Code Pro:size=11:antialias=true:hinting=medium;2
+; font-0 = Cherry:size=13:antialias=false:hinting=none:style=regular;2
+font-0 = Roboto Mono:size=11:antialias=true:hinting=slight;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=true;0
 font-2 = siji:pixelsize=10;1
 font-3 = SauceCodePro Nerd Font:size=11;2
@@ -105,7 +105,7 @@ font-4 = steadysetfeather:size=11;2
 ; modules-center = pkg bspwm cpu memory spacer spotipy previous playpause next
 ; modules-center = pkg cpu memory bspwm battery volume xbacklight wlan
 modules-left = battery cpu memory wlan
-modules-center = pkg bspwm date 
+modules-center = pkg bspwm datetime
 modules-right = volume xbacklight powermenu
 
 scroll-up = bspwm-desknext
@@ -353,8 +353,8 @@ interval = 1
 date = 
 date-alt = " %m/%d/%Y"
 
-time = %H:%M
-time-alt = %H:%M:%S
+time = "%a %l:%M %p"
+time-alt = "%I:%M:%S"
 
 format-background = #e6e88274
 label-foreground = ${colors.background}
@@ -427,10 +427,11 @@ format-discharging-padding = 1
 format-discharging = "<label-discharging>"
 format-discharging-prefix = "  " 
 
-format-full-prefix = " "
+format-full = "<label-full> "
+format-full-prefix = " "
 format-full-prefix-padding = 1
-format-full-prefix-background = ${colors.fg-transparent}
-format-full-prefix-foreground = ${colors.foreground-alt}
+; format-full-prefix-background = ${colors.fg-transparent}
+; format-full-prefix-foreground = ${colors.foreground-alt}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -441,7 +442,7 @@ animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
 [module/temperature]
@@ -571,13 +572,23 @@ label = 💡
 exec = echo label
 
 [module/spacer]
-click-left = exec playerctl next format-background = #00303030
+format-background = #00303030
+click-left = exec playerctl next
 type = custom/script
 exec = echo " "
 
 [module/placeholder]
 type = custom/script
 width = 1
+
+[module/datetime]
+type = custom/script
+format-background = #e6e88274
+format-foreground = ${colors.background}
+format-padding = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.background}
+exec = date +"%a %-l:%M %p"
 
 [settings]
 screenchange-reload = true

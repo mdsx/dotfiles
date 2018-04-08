@@ -5,12 +5,12 @@ rofi.color-enabled: true
 rofi.show-icons: false
 
 !                  'bg',   'border', 'separator'
-rofi.color-window: #1d1f21, #1d1f21, #a2a4a2
+rofi.color-window: #192124, #2f343f, #e8a097
 
 ! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
-rofi.color-normal: #1d1f21, #eceff0, #1d1f21, #eceff0, #1d1f21
-rofi.color-active: #1d1f21, #288ad6, #1d1f21, #288ad6, #eceff0
-rofi.color-urgent: #1d1f21, #d4665d, #1d1f21, #d4665d, #eceff0
+rofi.color-normal: #192124, #eceff0, #192124, #192124, #e88274
+rofi.color-active: #192124, #288ad6, #192124, #288ad6, #eceff0
+rofi.color-urgent: #192124, #d4665d, #192124, #d4665d, #eceff0
 
 ! rofi -color-window "#1d1f21, #1d1f21, #a2a4a2" -color-normal "#1d1f21, #eceff0, #1d1f21, #eceff0, #1d1f21" -color-active "#1d1f21, #288ad6, #1d1f21, #288ad6, #eceff0" -color-urgent "#1d1f21, #d4665d, #1d1f21, #d4665d, #eceff0"
 

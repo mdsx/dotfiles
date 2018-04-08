@@ -11,15 +11,23 @@ super + shift + Return
 
 # rofi drun + run
 super + p
-    rofi -combi-modi drun,run -show combi -modi combi,window -font "Source Code Pro 12" \
-    -scrollbar-width 2 -bw 18 -separator-style solid -width 100 -location 1 \
-    -lines 10 -yoffset -4 -columns 3
+    rofi -combi-modi drun,run -show combi -modi combi,window -font "Roboto Mono 11" \
+    -scrollbar-width 0 -separator-style none -width 30 -location 2 -lines 8 -yoffset 360 \
+    -padding 18 -bw 6 -display-combi "Run"
+    # dmenu_run -i -fn 'Roboto Mono:size=11' -x 460 -y 30 -w 1000 -p '$ ' -nb '#2f343f' -nf '#e7e8eb' -sb '#e88274' -sf '#2f343f' -h 27 -dim 0.1
+
+super + shift + p
+    rofi -combi-modi drun,run -show combi -modi combi,window -font "Roboto Mono 11" \
+    -scrollbar-width 2 -separator-style solid -width 100 -location 1 \
+    -lines 10 -yoffset -4 -columns 3 -padding 18 -display-combi "[D]run"
     # rofi -modi run,drun,window -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font "Andale Mono 11"
 
 # rofi switch window
 alt + Tab
-    rofi -show window -font "Source Code Pro 12" -scrollbar-width 2 -bw 18 \
-    -separator-style solid -width 100 -location 1 -lines 10 -yoffset -4
+    rofi -show window -font "Roboto Mono 11" -scrollbar-width 0 -padding 18 -bw 6 \
+    -separator-style none -width 30 -location 2 -lines 8 -yoffset 360 -display-window "Window"
+    # rofi -show window -font "Roboto Mono 11" -scrollbar-width 2 -bw 18 -separator-style solid \
+    # -width 100 -location 1 -lines 10 -yoffset -4
 
 # xfce appmenu
 super + @space
@@ -48,9 +56,12 @@ Print
 super + Escape
     pkill -USR1 -x sxhkd
 
-# make sxhkd reload its configuration files:
+# make bspwm reload its configuration files:
 super + alt + Escape
     bspc quit
+
+super + t
+    ~/code/bash/draw_termite
 
 # voume keys
 # ----------
@@ -177,11 +188,11 @@ super + m
     bspc desktop -l next
 
 # move focused window to the next workspace and then switch to that workspace
-super + {_,shift +} Tab
+super + Tab: {Right,Left}
     id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}; \
     bspc desktop --focus next; bspc node --focus ${id}
 
-super + {_,shift +} grave
+super + shift + Tab; {Right,Left}
     id=$(bspc query --nodes --node); bspc node --to-desktop {next,prev}
 
 # Hide/Unhide currently active window

@@ -22,7 +22,7 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 # Set prompt modifications
 # PROMPT='%(?.%F{7}✱.%F{1}✱)%f '
 # PROMPT='%(?.%F{7}.%F{1}➜ %F{7})➜%f '
-PROMPT='%(?.%F{7}.%F{4}× %F{7})>%f '
+PROMPT='%(?.%F{7}.%F{2}× %F{7})>%f '
 
 # wal
 # (cat ~/.cache/wal/sequences &)
@@ -39,22 +39,24 @@ export TERM=xterm-256color
 
 # Aliases
 alias c="clear"
+alias ll="ls -lh"
+alias la="ls -alh"
 alias vi="nvim"
 alias srcd="source deactivate"
 alias py27="source /home/ms/.conda/envs/py27/bin/activate py27"
 alias py36="source /home/ms/.conda/envs/py36/bin/activate py36"
 alias py="python"
 alias colors="~/code/color-scripts/color-scripts/panes"
-alias pac="pacaur"
-alias poly="/home/ms/code/shell_scripts/launch_poly.sh"
-alias vtop="vtop --theme brew"
+alias pac="yay"
+alias poly="/home/ms/code/bash/launch_poly.sh"
+alias vtop="vtop --theme wizard"
 alias how="howdoi -c -n 3"
 alias def="dict -d gcide"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Greeting
-fortune && ~/code/shell_scripts/totoro_banner
+fortune && ~/code/bash/totoro_banner
 
 # Default Editor
 export VISUAL=/usr/bin/nvim

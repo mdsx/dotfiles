@@ -30,6 +30,7 @@ Plug 'python-mode/python-mode'
 Plug 'plasticboy/vim-markdown'
 Plug 'dylanaraps/wal.vim'
 Plug 'ervandew/supertab'
+Plug 'rakr/vim-two-firewatch'
 
 call plug#end()
 
@@ -46,13 +47,14 @@ let g:lightline = {
     \ }
 
 " Settings
-set termguicolors
+" set termguicolors
 set number relativenumber
 syntax enable
 set background=dark
-colo cupertino-light
-source .vim/colors/cupertino-light.vim
-" colorscheme wal
+" colo cupertino-light
+" source .vim/colors/cupertino-light.vim
+colorscheme wal
+" colo two-firewatch
 " filetype plugin on
 set foldlevelstart=20
 set incsearch
@@ -76,14 +78,20 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_enabled = 0
 let g:jedi#completions_enabled = 0
 let g:pymode_options_colorcolumn = 0
+let mapleader = "\<Space>"
 
 " Commands
+command W w !sudo tee % > /dev/null
 
 " Keybinds
 " map <C-p> :Files<CR>
 map <C-n> :NERDTreeToggle<CR>
 map <C-l> :ALEToggle<CR>
 map <C-a>  ggVG<CR>
+inoremap jj <Esc>
+inoremap <C-S> <Esc>:update<CR>
+nnoremap <C-S> :update<CR>
+nnoremap <CR> :noh<CR>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
